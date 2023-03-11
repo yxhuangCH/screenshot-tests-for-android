@@ -33,6 +33,8 @@ apply plugin: 'kotlin'
 apply plugin: "java-gradle-plugin"
 apply plugin: 'com.vanniktech.maven.publish'
 
+//apply plugin: 'maven-publish'
+
 final GENERATED_PACKAGE_NAME = "com.facebook.testing.screenshot.generated"
 final GENERATED_BUILD_DIR =
     new File(
@@ -104,5 +106,30 @@ task py3Tests(type: Exec) {
   workingDir file('./src/py')
   commandLine 'python3', '-m', 'unittest', 'discover'
 }
+//
+//publishing {
+//  publications {
+//     publish2Local(MavenPublication) {
+//      groupId = 'com.facebook.testing.screenshot.build'
+//      artifactId = 'ScreenshotsPlugin'
+//      version = '0.14.1'
+//
+//       from components.java
+//       // 上传source，这样使用放可以看到方法注释
+////       artifact generateSourcesJar
+//     }
+//  }
+//  repositories {
+//      maven{
+//        url = "$buildDir/repo"
+//        // 仓库用户名密码
+//        credentials {
+//          username = "yxhuang"
+//          password = "yxhuang"
+//        }
+//      }
+//  }
+//}
+
 
 

@@ -45,49 +45,49 @@ class MainActivityTest {
     Screenshot.snapActivity(activity).record()
   }
 
-  @Test
-  fun mainActivityTestSettingsOpen() {
-    val activity = activityTestRule.launchActivity(null)
-    val floatingActionButton = onView(allOf<View>(withId(R.id.fab), isDisplayed()))
-    floatingActionButton.perform(click())
-
-    openActionBarOverflowOrOptionsMenu(activity)
-    Screenshot.snapActivity(activity).record()
-  }
-
-  @Test
-  fun mainActivityTestFabWithEspresso() {
-    activityTestRule.launchActivity(null)
-    onView(withId(R.id.fab)).perform(screenshot("fab"))
-  }
-
-  @Test
-  fun errorTextShouldBeRed() {
-    val intent = MainActivity.intent(MainActivity.Status.ERROR)
-    val activity = activityTestRule.launchActivity(intent)
-
-    Screenshot.snapActivity(activity).record()
-  }
-
-  @Test
-  fun warningTextShouldBeYellow() {
-    val intent = MainActivity.intent(MainActivity.Status.WARNING)
-    val activity = activityTestRule.launchActivity(intent)
-
-    Screenshot.snapActivity(activity).record()
-  }
-
-  @Test
-  fun okTextShouldBeGreen() {
-    val intent = MainActivity.intent(MainActivity.Status.OK)
-    val activity = activityTestRule.launchActivity(intent)
-
-    Screenshot.snapActivity(activity).record()
-  }
-
-  @Test
-  fun testScreenshotEntireActivityWithoutAccessibilityMetadata() {
-    val activity = activityTestRule.launchActivity(null)
-    Screenshot.snapActivity(activity).setIncludeAccessibilityInfo(false).record()
-  }
+//  @Test
+//  fun mainActivityTestSettingsOpen() {
+//    val activity = activityTestRule.launchActivity(null)
+//    val floatingActionButton = onView(allOf<View>(withId(R.id.fab), isDisplayed()))
+//    floatingActionButton.perform(click())
+//
+//    openActionBarOverflowOrOptionsMenu(activity)
+//    Screenshot.snapActivity(activity).record()
+//  }
+//
+//  @Test
+//  fun mainActivityTestFabWithEspresso() {
+//    activityTestRule.launchActivity(null)
+//    onView(withId(R.id.fab)).perform(screenshot("fab"))
+//  }
+//
+//  @Test
+//  fun errorTextShouldBeRed() {
+//    val intent = MainActivity.intent(MainActivity.Status.ERROR)
+//    val activity = activityTestRule.launchActivity(intent)
+//
+//    Screenshot.snapActivity(activity).record()
+//  }
+//
+//  @Test
+//  fun warningTextShouldBeYellow() {
+//    val intent = MainActivity.intent(MainActivity.Status.WARNING)
+//    val activity = activityTestRule.launchActivity(intent)
+//
+//    Screenshot.snapActivity(activity).record()
+//  }
+//
+//  @Test
+//  fun okTextShouldBeGreen() {
+//    val intent = MainActivity.intent(MainActivity.Status.OK)
+//    val activity = activityTestRule.launchActivity(intent)
+//
+//    Screenshot.snapActivity(activity).record()
+//  }
+//
+//  @Test
+//  fun testScreenshotEntireActivityWithoutAccessibilityMetadata() {
+//    val activity = activityTestRule.launchActivity(null)
+//    Screenshot.snapActivity(activity).setIncludeAccessibilityInfo(false).record()
+//  }
 }

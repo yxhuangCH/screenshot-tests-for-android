@@ -119,6 +119,8 @@ class Recorder:
             name = screenshot["name"] + ".png"
             actual = join(self._output, name)
             expected = join(self._realoutput, name)
+            print(" actual %s" % actual)
+            print(" expected %s" % expected)
             if self._failure_output:
                 diff_name = screenshot["name"] + "_diff.png"
                 diff = join(self._failure_output, diff_name)
